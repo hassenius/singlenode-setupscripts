@@ -26,3 +26,6 @@ sudo mv /tmp/icp/cluster/* ${cluster_dir}
 
 # Take a backup of original config file, to keep a record of original settings and comments
 cp ${cluster_dir}/config.yaml ${cluster_dir}/config.yaml-original
+
+echo "Copying SSH private key"
+cp ~/.ssh/id_rsa ${cluster_dir}/ssh_key
