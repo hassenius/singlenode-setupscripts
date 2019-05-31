@@ -30,6 +30,12 @@ As user with sudo access
 ./copy_cluster_skel.sh -d <cluster_dir>
 ```
 
+# Generate the configs
+As user with sudo access
+```
+./generateconfigs.sh -d <cluster_dir>
+```
+
 # Start installation
 As user with sudo access
 ```
