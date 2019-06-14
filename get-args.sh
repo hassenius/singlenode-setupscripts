@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts ":i:d:v:c:l:u:p:o:k:s:f:" arg; do
+while getopts ":i:d:v:c:l:u:p:o:k:s:f:n:a:" arg; do
     case "${arg}" in
       i)
         icp_inception=${OPTARG}
@@ -33,7 +33,13 @@ while getopts ":i:d:v:c:l:u:p:o:k:s:f:" arg; do
         image_file=${OPTARG}
         ;;
       s)
-        docker_version=${OPTARG}
+        ssh_pass=${OPTARG}
+        ;;
+      n)
+        cluster_name=${OPTARG}
+        ;;
+      a)
+        cluster_ca_domain=${OPTARG}
         ;;
       \?)
         echo "Invalid option : -$OPTARG in commmand $0 $*" >&2

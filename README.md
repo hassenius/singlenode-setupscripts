@@ -33,7 +33,7 @@ As user with sudo access
 # Generate the configs
 As user with sudo access
 ```
-./generateconfigs.sh -d <cluster_dir>
+./generateconfigs.sh -d <cluster_dir> -p <icp_admin_password> -n <cluster_name> -a <cluster_ca_domain> -s <ssh_pass>
 ```
 
 # Start installation
