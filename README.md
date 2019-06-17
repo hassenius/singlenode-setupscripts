@@ -41,3 +41,10 @@ As user with sudo access
 ```
 ./start_install.sh
 ```
+
+
+# Update certificates after install
+As user with kubectl permissions
+```
+./update_certificate.sh -d <directory> (optional, default /u02/tic/stage/certs) -c <certificate> (optional, default atapcdhictic01.crt) -k <key> (optional, default atapcdhictic01.key)
+```
