@@ -39,7 +39,7 @@ As user with sudo access
 # Start installation
 As user with sudo access
 ```
-./start_install.sh
+./start_install.sh -c install -d <cluster_dir> 
 ```
 
 
