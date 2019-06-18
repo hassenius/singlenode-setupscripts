@@ -8,23 +8,25 @@ mkdir -p /var/lib/docker /var/lib/etcd /var/lib/icp /var/lib/kubelet /var/log/cl
 
 # Create mountpoint for cluster config
 echo "Create mountpoint for cluster config"
-mkdir -p /opt/ibm-cloud-private-3.1.2
-chown -R admicp02:admicp02 /opt/ibm-cloud-private-3.1.2
+mkdir -p /opt/ibm-cloud-private-3.2.0
+chown -R admicp02:admicp02 /opt/ibm-cloud-private-3.2.0
 
 # Create storage point for cluster config
 echo "Create storage point for cluster config"
-mkdir -p /u01/tic/ibm-cloud-private-3.1.2
-chown -R admicp02:admicp02   /u01/tic/ibm-cloud-private-3.1.2
+mkdir -p /u01/tic/ibm-cloud-private-3.2.0
+chown -R admicp02:admicp02   /u01/tic/ibm-cloud-private-3.2.0
 
 # Setup mount
 echo "Update fstab"
 cat <<EOF >>scrpfile
-/u01/tic/var/lib/docker /var/lib/docker  ext4 bind    0       0
-/u01/tic/var/lib/etcd /var/lib/etcd  ext4 bind    0       0
-/u01/tic/var/lib/icp /var/lib/icp  ext4 bind    0       0
-/u01/tic/var/lib/kubelet /var/lib/kubelet  ext4 bind    0       0
-/u01/tic/var/log/cloudsight /var/log/cloudsight  ext4 bind    0       0
-/u01/tic/ibm-cloud-private-3.1.2  /opt/ibm-cloud-private-3.1.2 ext4 bind    0       0
+/dev/sdc1 on /u01 type ext4 (rw,relatime,seclabel,data=ordered)
+/dev/sdc1 on /var/lib/docker type ext4 (rw,relatime,seclabel,data=ordered)
+/dev/sdc1 on /var/lib/etcd type ext4 (rw,relatime,seclabel,data=ordered)
+/dev/sdc1 on /var/lib/icp type ext4 (rw,relatime,seclabel,data=ordered)
+/dev/sdc1 on /var/lib/kubelet type ext4 (rw,relatime,seclabel,data=ordered)
+/dev/sdc1 on /var/log/cloudsight type ext4 (rw,relatime,seclabel,data=ordered)
+/dev/sdc1 on /opt/ibm-cloud-private-3.2.0 type ext4 (rw,relatime,seclabel,data=ordered)
+/dev/sdc1 on /var/lib/etcd-wal type ext4 (rw,relatime,seclabel,data=ordered)
 EOF
 
 echo "Mounting..."
