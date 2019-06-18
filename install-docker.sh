@@ -107,6 +107,7 @@ else
     mkdir -p ${sourcedir}
     curl -o ${sourcedir}/${filename} "${docker_package_location#http:}"
     package_file="${sourcedir}/${filename}"
+  fi
   elif [[ "${docker_package_location:0:5}" == "local" ]]
   then
       # We already have this file locally

@@ -39,12 +39,5 @@ As user with sudo access
 # Start installation
 As user with sudo access
 ```
-./start_install.sh -c install -d <cluster_dir> 
-```
-
-
-# Update certificates after install
-As user with kubectl permissions
-```
-./update_certificate.sh -d <directory> (optional, default /u02/tic/stage/certs) -c <certificate> (optional, default atapcdhictic01.crt) -k <key> (optional, default atapcdhictic01.key)
+./start_install.sh
 ```
