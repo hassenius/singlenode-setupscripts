@@ -40,7 +40,7 @@ etcd_wal_dir: "/var/lib/etcd-wal"
 fips_enabled: false
 default_admin_user: admin
 default_admin_password: ${password}
-ansible_user: admdlu037
+ansible_user: icpuser
 ansible_become: true
 ansible_ssh_pass: ${ssh_pass}
 ansible_become_password: "{{ ansible_ssh_pass }}"
@@ -62,5 +62,6 @@ docker_config:
     max-size: "100m"
     max-file: "10"
 offline_pkg_copy_path: /u02/tic/tmp
+firewall_enabled: false
 
 EOF
