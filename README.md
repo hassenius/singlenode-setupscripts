@@ -39,7 +39,7 @@ As user with sudo access
 # Start installation
 As user with sudo access
 ```
-./start_install.sh -c install -d <cluster_dir> 
+./start_install.sh -c install -d <cluster_dir>  -i <icp_inception_image>
 ```
 
 
