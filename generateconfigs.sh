@@ -37,10 +37,11 @@ cluster_domain: cluster.local
 etcd_extra_args: ["--grpc-keepalive-timeout=0", "--grpc-keepalive-interval=0", "--snapshot-count=10000"]
 etcd_data_dir: "/var/lib/etcd"
 etcd_wal_dir: "/var/lib/etcd-wal"
+firewall_enabled: true
 fips_enabled: false
 default_admin_user: admin
 default_admin_password: ${password}
-ansible_user: icpUser
+ansible_user: icpuser
 ansible_become: true
 ansible_ssh_pass: ${ssh_pass}
 ansible_become_password: "{{ ansible_ssh_pass }}"
@@ -61,6 +62,6 @@ docker_config:
   log-opts:
     max-size: "100m"
     max-file: "10"
-offline_pkg_copy_path: /u02/tic/tmp
+offline_pkg_copy_path: /u01/tic/tmp
 
 EOF
